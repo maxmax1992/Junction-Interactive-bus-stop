@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bus Stop Thoughts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'functions.js' %}"></script>
+</head>
+<body>
+  <!--
+        <div id="header" class="nav">
+          <button class= "new tab">New</button
+          ><button class= "best tab">Best</button
+          ><textarea class= "asd txt tab">Bus stop id: 1234</textarea>
+        </div>
+      -->
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-xs-4 col_custom">
+            <h1 id="new">New</h1>
+          </div>
+          <div class="col-xs-4 col_custom middle">
+            <h1 class="best">Best</h1>
+          </div>
+          <div class="col-xs-4 col_custom">
+            <h1>Bus stop id: 1234</h1>
+          </div>
+        </div>
+      </div><br>
+
+  {% for object in message_objects %}
+    <div class="well well_custom" id={{ object.id }}>
+      <div class="row">
+        <div class="col-xs-7 text_custom">{{ object.message_text }}</div>
+        <div class="col-xs-5 right_align">
+          <button class="down vote"></button>
+          <button class="btn btn-inactive btn_custom">0</button>
+          <button class="up vote"></button>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+
+</div>
+
+  </body>
+</html>
